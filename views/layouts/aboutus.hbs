@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <style>
+        html{
+            position: relative;
+            min-width: 1024px;
+            min-height: 768px;
+            height: 100%;
+        }
+
+        body {margin:0;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {position: relative;}
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0px;
+            width: 100%;
+            height: 42px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+</div>
+<div id="container" style="width:100%;"><br>
+    <div id="right" align="right" style="margin-right:55px; width:70%; padding-top: 20px;">
+        <img src="https://i.imgur.com/bKBn8S1.jpg" align="right" height="125"width="325" />
+    </div></div>
+
+<font size="5" color="black"><br><b>Project Mentor</b></font><br>
+<font size="4" color="black"><b>Professor Kaushik Dutta</b></font><br>
+<a href="http://www.usf.edu/business/"> <img src="http://www.ismlab.usf.edu/mumalogo_small.gif" align="left" height="60" width="200"
+     style="position: absolute; top: -200px; bottom: 180px; left: -500px; right: 440px; margin: auto;" /></a><br><br>
+<br><font size="5" color="black"><br><b>Project Members</b></font>
+<font size="4" color="black"><b><br>Ayush Sood
+    <a href="https://www.linkedin.com/in/ayushsood2/"><i class="fa fa-linkedin-square" style="font-size: 20px"></i> </a>
+    <br>Himanshu Ranjan
+    <a href="https://www.linkedin.com/in/hranjan67/"><i class="fa fa-linkedin-square" style="font-size: 20px"></i> </a>
+    <br>Saurabh Jeet Singh
+    <a href="https://www.linkedin.com/in/saurabhjeetsingh/"><i class="fa fa-linkedin-square" style="font-size: 20px"></i> </a>
+    <br>Shashank Swami
+    <a href="https://www.linkedin.com/in/shashankswami/"><i class="fa fa-linkedin-square" style="font-size: 20px"></i> </a>
+</b><br></font>
+</body>
+
+
+<img src="https://ibin.co/3jFAt1fTr8Da.jpg" align="right" height="400" width="850"
+     style="position: absolute; top: 50px; bottom: 0; left: 200px; right: 0; margin: auto;" />
+
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br><br>
+<div style="padding-left: 300px">
+    <b><h3><b>IMPLEMENTATION DETAILS</b>  </h3>
+    <br>
+    <h4> <b> OVERALL ARCHITECTURE </b> </h4>
+        No SQL Database  : MangoDB  Atlas<br>
+        Web Development  : Node JS (PHP Storm Tool)<br>
+        Cache System  : Redis Labs<br>
+        Textual Search System : Lucene based Amazon  Elastic Search<br>
+        Cloud Application Platform :HEROKU<br>
+        CDN : Amazon Cloud Front<br>
+
+    <h4><b>MongoDB </b> </h4>
+        We have used  Mongo DB as a service provided by MongoDB Atlas.<br>
+        Used MongoClient  tool to load the database using bulk JSON commands<br>
+        Validated  connection profile and SSL Gateway<br><br>
+        Key Benefits of mongo DB are:<br>
+        1) &nbsp; Scaling on demand.<br>
+        2) &nbsp;Flexible Schema<br>
+        3) &nbsp;Real Time Analytics<br>
+
+        We have used mongoose driver for the node.js and MongoDB connection.<br><br>
+
+        <h4><b>NODE.JS</b> </h4>
+        Node JS to develop the front end web application.
+        <br>Ideal for data heavy websites and applications.
+        <br>Used it to connect to mongo Db, ElasticSearch and Redis Cache.
+         <br>Used Express.js, a Sinatra-inspired web development framework for Node.js, and the de-facto standard for the majority of Node.js applications out there today.
+        <br>Used PHPStorm as the development tool for coding.
+        <br>Benefits include vast npm packages which provides easy to connect interface for Redis, ElasticSearch and server side scripting.
+        <br>
+        <br>
+
+        <h4><b>ELASTICSEARCH + KIBANA </b> </h4>
+        Used Amazon ElasticSearch Service provided by Amazon which is a hosted solution to implement search functionality.
+        <br>750 hours per month in a single micro instance.
+        <br>Apache Lucene processing technology under the hood.
+        <br>Used Kibana to create and upload document indexes.
+        <br>AWS-ES is a Node.js binding for Amazon's Elasticsearch service which requires Amazon's Signature Version 4.
+        <br>
+        <br>
+        <h4><b>REDIS CACHE </b> </h4>
+        We have used Redis as a service provided by REDIS LAB for implementing cache functionality in the application.
+        <br> high throughput and consistent  low latency data access to power fast  and scalable applications.
+        <br>Created instance for our application at Redis lab to use it as a service.
+        <br>Free subscription provides 30 MB of caching space.
+        <br><br>
+        <h4><b>CONTENT DELIVERY NETWORK </b> </h4>
+        Amazon CloudFront is a global content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to your viewers with low latency and high transfer speeds
+        <br> Free tier service by Amazon provides 50 GB data transfer and 2 Million requests per month.
+        <br> Useful to view cache statistics such as percentage of viewer requests and content delivery location wise.
+        <br><br>
+        <h4><b>WEBSITE HOSTING PLATFORM</b> </h4>
+        Heroku was used for Platform as a Service(PaaS) tp deploy the node.js applications.
+        <br>Free service with benefits of instant deployment.
+        <br>Ease of use- Convenient Scaling.
+        <br>Supports various plugins for 3rd party tools.
+        <br>Access to the Heroku Dashboard and Heroku CLI for app management.
+        <br>500 MB of free size was provided to host the application.
+
+    </b>
+</div>
+<br><br><br><br><br><br>
+
+
+
+</html>
+<div class="footer" style="padding-top: 10px;">
+    More e-Books &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.gutenberg.org/"> Project Gutenberg | </a>
+    <a href="https://www.goodreads.com/"> GoodReads | </a>
+    <a href="http://www.openingthebook.com/whichbook/"> WhichBook | </a>
+    <a href="http://landers.bookbub.com/covers/?source="> BookBub </a>
+    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See the Project&nbsp;&nbsp;&nbsp;&nbsp;</b>
+    <a href="https://github.com/sjsingh91/bigdata-ecommerce-books"><img src="https://www.rstudio.com/wp-content/uploads/2014/03/GitHub-Mark-Light-32px.png" style="bottom: 150px"></a>
+
+
+</div>
