@@ -45,7 +45,7 @@ client.ping({
 });
 
 // create an elasticsearch client for your Amazon ES
-let es = require('elasticsearch').Client({
+var es = require('elasticsearch').Client({
     hosts: [ 'https://search-tvsets-ufpidf2ylw7ln3ekxhqtwk3rju.us-east-2.es.amazonaws.com' ],
     connectionClass: require('http-aws-es')
 });
