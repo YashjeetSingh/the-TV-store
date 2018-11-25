@@ -1,3 +1,4 @@
+//Calling installed packages
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -14,15 +15,16 @@ var MongoStore = require('connect-mongo')(session);
 var index = require('./routes/index');
 var user = require('./routes/user');
 var app = express();
-//var url = 'mongodb://ayushsood:bloodycool@bigdataproject-shard-00-00-t2zn5.mongodb.net:27017,bigdataproject-shard-00-01-t2zn5.mongodb.net:27017,bigdataproject-shard-00-02-t2zn5.mongodb.net:27017/bookEcommerce?ssl=true&replicaSet=BigDataProject-shard-0&authSource=admin';
 var url = 'mongodb://yashjeet:Mongo123@cluster0-shard-00-00-y1niv.mongodb.net:27017,cluster0-shard-00-01-y1niv.mongodb.net:27017,cluster0-shard-00-02-y1niv.mongodb.net:27017/Db?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
 mongoose.connect(url,{useMongoClient:true});
 var db=mongoose.connection;
 require('./config/passport');
-// view engine setup
+
+  // Setting up Handlebars as the View Engine
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
 app.set('view engine', '.hbs');
-//ELASTIC SEARCH
+
+//Setting up Amazon Elasticsearch Service
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
     accessKeyId: 'AKIAIV7YCAPRHY7VXS6A',
@@ -34,23 +36,22 @@ var client = new elasticsearch.Client({
 });
 
 client.ping({
-    // ping usually has a 3000ms timeout
+    // The ping will timeout at 1000ms timeout
     requestTimeout: 1000
 }, function (error) {
     if (error) {
-        console.trace('elasticsearch cluster is down!');
+        console.trace('The AWS elasticsearch service is not available!');
     } else {
-        console.log('All is well');
+        console.log('Amazon Elasticsearch Service successfully connected!');
     }
 });
 
-// create an elasticsearch client for your Amazon ES
+//Elasticsearch client for my Amazon ES created here
 var es = require('elasticsearch').Client({
     hosts: [ 'https://search-tvsets-ufpidf2ylw7ln3ekxhqtwk3rju.us-east-2.es.amazonaws.com' ],
     connectionClass: require('http-aws-es')
 });
-//uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -84,10 +85,9 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
+// Handling errors
 
-// development error handler
-// will print stacktrace
+// Error handling for development environment
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
@@ -98,8 +98,7 @@ if (app.get('env') === 'development') {
   });
 }
 
-// production error handler
-// no stacktraces leaked to user
+// Error handling for production environment
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {

@@ -5,7 +5,7 @@ var client = new elasticsearch.Client({
     secretAccessKey : 'lKRVfO450z//w62UUiWgjmYHGEi00oBQXRgXDgIq',
     service : 'es',
     log: 'trace',
-    region: 'us-west-2',
+    region: 'us-east-2',
     host: 'search-tvsets-ufpidf2ylw7ln3ekxhqtwk3rju.us-east-2.es.amazonaws.com'
 });
 module.exports = client;
