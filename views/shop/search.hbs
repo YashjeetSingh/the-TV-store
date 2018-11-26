@@ -3,7 +3,7 @@
     <style>
 
         body {margin:0;
-            }
+            background-color: transparent;}
         html{
             position: relative;
             min-width: 1024px;
@@ -74,8 +74,6 @@
 
     </style>
 </head>
-
-
 <div class="row">
     <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
         <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
@@ -86,19 +84,18 @@
 <br>
 <br>
 <br>
-<h3><b>SEARCHED PRODUCTS</b></h3>
+
+<h3><b>Here you go!</b></h3>
 {{# each products }}
     <div class="row";>
         {{# each this }}
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     <a href="/loadProduct?_id={{this._id}}">
-                        <img src="{{ this.ImageURL }}" alt="..." class="img-responsive">
+                    <img src="{{ this.ImageURL }}" alt="..." class="img-responsive">
                         <h3 style="font-size: 20px">{{ this.Title }}</h3>
                     </a>
                     <div class="caption">
-
-                        <p class="authors"; style="font-size: 13px"><b>Brands : {{ this.Brand }}</b></p>
 
                         <div class="clearfix">
                             <div class="price pull-left">Price: ${{ this.Price }}</div>
@@ -106,14 +103,14 @@
                             <div id="white-background">
                             </div>
                             <div id="dlgbox">
-                                <div id="dlg-header">Your Book is Added to Cart</div>
-                                <div id="dlg-body">Sorry for inconvenience we are working on it</div>
+                                <div id="dlg-header">Item added to cart!</div>
+                                <div id="dlg-body">Uh-oh! We hit a snag!</div>
                                 <div id="dlg-footer">
-                                    <button onclick="dlgLogin()">Go Back</button>
+                                    <button onclick="dlgLogin()"> Back</button>
                                 </div>
                             </div>
 
-                            <a class="btn btn-success pull-right" role="button" onclick="showDialog()">Add to Shopping Cart</a>
+                            <a class="btn btn-outline-success pull-right" role="button" onclick="showDialog()">Move to cart!  </a>
                             <script>
                                 function dlgLogin(){
                                     var whitebg = document.getElementById("white-background");
@@ -138,7 +135,7 @@
 
                             </body>
 
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -148,11 +145,5 @@
 
 </html>
 <div class="footer" style="padding-top: 10px;">
-    More e-Books &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://www.gutenberg.org/"> Project Gutenberg | </a>
-    <a href="https://www.goodreads.com/"> GoodReads | </a>
-    <a href="http://www.openingthebook.com/whichbook/"> WhichBook | </a>
-    <a href="http://landers.bookbub.com/covers/?source="> BookBub </a>
-    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See the Project&nbsp;&nbsp;&nbsp;&nbsp;</b>
-    <a href="https://github.com/sjsingh91/bigdata-ecommerce-books"><img src="https://www.rstudio.com/wp-content/uploads/2014/03/GitHub-Mark-Light-32px.png" style="bottom: 150px"></a>
-</div>
+  Built by Yashjeet Singh, Poonam Krishna, Shreyas Dalvi!
+  </div>

@@ -1,12 +1,16 @@
-.thumbnail img {
-    max-height: 100px;
+.thumbnail img{
+    max-height: 150px;
+  }
+
+.Title
+{
+  color:gray;
+}
+.Price{
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.thumbnail .description {
-    color: #7f7f7f;
-}
-
-.price {
-    font-weight: bold;
-    font-size: 16px;
-}
+.nav a{
+            font-size: 1.8em;
+        }

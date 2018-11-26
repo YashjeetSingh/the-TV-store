@@ -2,8 +2,13 @@
 <head>
     <style>
 
-        body {margin:0;
-            background-color: transparent;}
+        body {
+            margin:0;
+            background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
+            opacity:1;
+            background-repeat: no-repeat;
+   background-attachment: fixed;
+          }
         html{
             position: relative;
             min-width: 1024px;
@@ -23,7 +28,7 @@
         }
 
         #dlgbox{
-            /*initially dialog box is hidden*/
+            {{! The dialog box appers after when try to add something to the cart!}}
             display: none;
             position: fixed;
             width: 480px;
@@ -55,12 +60,6 @@
             margin: 0px 10px 10px 10px;
         }
 
-        #dlg-footer button{
-            background-color: dimgrey;
-            color: white;
-            padding: 5px;
-            border: 0px;
-        }
         .footer {
             position: fixed;
             left: 0;
@@ -84,173 +83,8 @@
 <br>
 <br>
 <br>
-<h3><b>TOP PRODUCTS</b></h3>
 
-<div class="row">
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-<!--            <a href="/loadProduct?_id={{this._id}}">-->
-                <img src="https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/marz.jpg" alt="..." class="img-responsive">
-                <h3 style="font-size: 20px">Big Data</h3>
-            </a>
-            <div class="caption">
-
-                <p class="authors"; style="font-size: 13px"><b>Authors : Nathan Marz, James Warren</b></p>
-
-                <div class="clearfix">
-                    <div class="price pull-left">Price: $42</div>
-                    <body>
-                    <div id="white-background">
-                    </div>
-                    <div id="dlgbox">
-                        <div id="dlg-header">Your Book is Added to Cart</div>
-                        <div id="dlg-body">Sorry for inconvenience we are working on it</div>
-                        <div id="dlg-footer">
-                            <button onclick="dlgLogin()">Go Back</button>
-                        </div>
-                    </div>
-
-                    <a class="btn btn-success pull-right" role="button" onclick="showDialog()">Add to Shopping Cart</a>
-                    <script>
-                        function dlgLogin(){
-                            var whitebg = document.getElementById("white-background");
-                            var dlg = document.getElementById("dlgbox");
-                            whitebg.style.display = "none";
-                            dlg.style.display = "none";
-                        }
-
-                        function showDialog(){
-                            var whitebg = document.getElementById("white-background");
-                            var dlg = document.getElementById("dlgbox");
-                            whitebg.style.display = "block";
-                            dlg.style.display = "block";
-
-                            var winWidth = window.innerWidth;
-                            var winHeight = window.innerHeight;
-
-                            dlg.style.left = (winWidth/2) - 480/2 + "px";
-                            dlg.style.top = "150px";
-                        }
-                    </script>
-
-                    </body>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <!--            <a href="/loadProduct?_id={{this._id}}">-->
-            <img src="https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker2.jpg" alt="..." class="img-responsive">
-            <h3 style="font-size: 20px">MongoDB in Action, Second Edition</h3>
-            </a>
-            <div class="caption">
-
-                <p class="authors"; style="font-size: 13px"><b>Authors : Tim Hawkins, Shaun Verch, Douglas Garrett</b></p>
-
-                <div class="clearfix">
-                    <div class="price pull-left">Price: $32</div>
-                    <body>
-                    <div id="white-background">
-                    </div>
-                    <div id="dlgbox">
-                        <div id="dlg-header">Your Book is Added to Cart</div>
-                        <div id="dlg-body">Sorry for inconvenience we are working on it</div>
-                        <div id="dlg-footer">
-                            <button onclick="dlgLogin()">Go Back</button>
-                        </div>
-                    </div>
-
-                    <a class="btn btn-success pull-right" role="button" onclick="showDialog()">Add to Shopping Cart</a>
-                    <script>
-                        function dlgLogin(){
-                            var whitebg = document.getElementById("white-background");
-                            var dlg = document.getElementById("dlgbox");
-                            whitebg.style.display = "none";
-                            dlg.style.display = "none";
-                        }
-
-                        function showDialog(){
-                            var whitebg = document.getElementById("white-background");
-                            var dlg = document.getElementById("dlgbox");
-                            whitebg.style.display = "block";
-                            dlg.style.display = "block";
-
-                            var winWidth = window.innerWidth;
-                            var winHeight = window.innerHeight;
-
-                            dlg.style.left = (winWidth/2) - 480/2 + "px";
-                            dlg.style.top = "150px";
-                        }
-                    </script>
-
-                    </body>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <!--            <a href="/loadProduct?_id={{this._id}}">-->
-            <img src="https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/briggs.jpg" alt="..." class="img-responsive">
-            <h3 style="font-size: 20px">Hello! Python</h3>
-            </a>
-            <div class="caption">
-
-                <p class="authors"; style="font-size: 13px"><b>Authors : Anthony Briggs</b></p>
-
-                <div class="clearfix">
-                    <div class="price pull-left">Price: $20</div>
-                    <body>
-                    <div id="white-background">
-                    </div>
-                    <div id="dlgbox">
-                        <div id="dlg-header">Your Book is Added to Cart</div>
-                        <div id="dlg-body">Sorry for inconvenience we are working on it</div>
-                        <div id="dlg-footer">
-                            <button onclick="dlgLogin()">Go Back</button>
-                        </div>
-                    </div>
-
-                    <a class="btn btn-success pull-right" role="button" onclick="showDialog()">Add to Shopping Cart</a>
-                    <script>
-                        function dlgLogin(){
-                            var whitebg = document.getElementById("white-background");
-                            var dlg = document.getElementById("dlgbox");
-                            whitebg.style.display = "none";
-                            dlg.style.display = "none";
-                        }
-
-                        function showDialog(){
-                            var whitebg = document.getElementById("white-background");
-                            var dlg = document.getElementById("dlgbox");
-                            whitebg.style.display = "block";
-                            dlg.style.display = "block";
-
-                            var winWidth = window.innerWidth;
-                            var winHeight = window.innerHeight;
-
-                            dlg.style.left = (winWidth/2) - 480/2 + "px";
-                            dlg.style.top = "150px";
-                        }
-                    </script>
-
-                    </body>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<h3><b>ALL PRODUCTS</b></h3>
+<h3><b>Find our best products here!</b></h3>
 {{# each products }}
     <div class="row";>
         {{# each this }}
@@ -268,14 +102,14 @@
                             <div id="white-background">
                             </div>
                             <div id="dlgbox">
-                                <div id="dlg-header">Your Book is Added to Cart</div>
-                                <div id="dlg-body">Sorry for inconvenience we are working on it</div>
+                                <div id="dlg-header">Item added to cart!</div>
+                                <div id="dlg-body">Uh-oh! We hit a snag!</div>
                                 <div id="dlg-footer">
-                                    <button onclick="dlgLogin()">Go Back</button>
+                                    <button type="button" class="btn btn-dark" onclick="dlgLogin()"> Back</button>
                                 </div>
                             </div>
 
-                            <a class="btn btn-success pull-right" role="button" onclick="showDialog()">Add to Shopping Cart</a>
+                            <a class="btn btn-outline-success pull-right" role="button" onclick="showDialog()">Move to cart!  </a>
                             <script>
                                 function dlgLogin(){
                                     var whitebg = document.getElementById("white-background");
@@ -310,13 +144,5 @@
 
 </html>
 <div class="footer" style="padding-top: 10px;">
-    More e-Books &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://www.gutenberg.org/"> Project Gutenberg | </a>
-    <a href="https://www.goodreads.com/"> GoodReads | </a>
-    <a href="http://www.openingthebook.com/whichbook/"> WhichBook | </a>
-    <a href="http://landers.bookbub.com/covers/?source="> BookBub </a>
-    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See the Project&nbsp;&nbsp;&nbsp;&nbsp;</b>
-    <a href="https://github.com/sjsingh91/bigdata-ecommerce-books"><img src="https://www.rstudio.com/wp-content/uploads/2014/03/GitHub-Mark-Light-32px.png" style="bottom: 150px"></a>
-
-
-</div>
+  Built by Yashjeet Singh, Poonam Krishna, Shreyas Dalvi!
+  </div>
