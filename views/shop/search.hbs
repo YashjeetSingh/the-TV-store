@@ -2,8 +2,13 @@
 <head>
     <style>
 
-        body {margin:0;
-            background-color: transparent;}
+    body {
+        margin:0;
+        background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
+        opacity:1;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
         html{
             position: relative;
             min-width: 1024px;
@@ -23,7 +28,7 @@
         }
 
         #dlgbox{
-            /*initially dialog box is hidden*/
+            {{! The dialog box appers after when try to add something to the cart!}}
             display: none;
             position: fixed;
             width: 480px;
@@ -55,12 +60,7 @@
             margin: 0px 10px 10px 10px;
         }
 
-        #dlg-footer button{
-            background-color: dimgrey;
-            color: white;
-            padding: 5px;
-            border: 0px;
-        }
+
         .footer {
             position: fixed;
             left: 0;
@@ -106,7 +106,7 @@
                                 <div id="dlg-header">Item added to cart!</div>
                                 <div id="dlg-body">Uh-oh! We hit a snag!</div>
                                 <div id="dlg-footer">
-                                    <button onclick="dlgLogin()"> Back</button>
+                                      <button type="button" class="btn btn-dark" onclick="dlgLogin()"> Back</button>
                                 </div>
                             </div>
 
