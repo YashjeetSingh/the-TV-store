@@ -1,4 +1,4 @@
-//Calling installed packages
+// Calling installed packages
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -15,16 +15,18 @@ var MongoStore = require('connect-mongo')(session);
 var index = require('./routes/index');
 var user = require('./routes/user');
 var app = express();
+// Connectig to the cloud Mongodb Atlas database
 var url = 'mongodb://yashjeet:Mongo123@cluster0-shard-00-00-y1niv.mongodb.net:27017,cluster0-shard-00-01-y1niv.mongodb.net:27017,cluster0-shard-00-02-y1niv.mongodb.net:27017/Db?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
 mongoose.connect(url,{useMongoClient:true});
 var db=mongoose.connection;
 require('./config/passport');
 
-  // Setting up Handlebars as the View Engine
+// Setting up Handlebars as the View Engine
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
-//Setting up Amazon Elasticsearch Service
+//Amazon Elasticsearch Service
+  //Setting up Amazon Elasticsearch Service
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
     accessKeyId: 'AKIAIV7YCAPRHY7VXS6A',
@@ -35,8 +37,15 @@ var client = new elasticsearch.Client({
     host: 'search-tvsets-ufpidf2ylw7ln3ekxhqtwk3rju.us-east-2.es.amazonaws.com'
 });
 
-client.ping({
+  //Elasticsearch client for my Amazon ES created here
+var es = require('elasticsearch').Client({
+    hosts: [ 'https://search-tvsets-ufpidf2ylw7ln3ekxhqtwk3rju.us-east-2.es.amazonaws.com' ],
+    connectionClass: require('http-aws-es')
+});
+
+    // Terminal output
     // The ping will timeout at 1000ms timeout
+client.ping({
     requestTimeout: 1000
 }, function (error) {
     if (error) {
@@ -46,11 +55,23 @@ client.ping({
     }
 });
 
-//Elasticsearch client for my Amazon ES created here
-var es = require('elasticsearch').Client({
-    hosts: [ 'https://search-tvsets-ufpidf2ylw7ln3ekxhqtwk3rju.us-east-2.es.amazonaws.com' ],
-    connectionClass: require('http-aws-es')
-});
+/*Setting up Redis cache
+var redis = require('redis');
+var redisClient  = require('redis')({
+  host: "redis-18544.c74.us-east-1-4.ec2.cloud.redislabs.com:18544", port: "18544", auth_pass: 'wrFxyijExesYwY2xllff5nh2ivRnKLdv'
+  });
+
+// Terminal output
+// The ping will timeout at 1000ms timeout
+redisClient.ping({
+requestTimeout: 1000
+}, function (error) {
+if (error) {
+    console.trace('The Redis caching service is not available!');
+} else {
+    console.log('Redis caching service has successfully started!');
+}
+});*/
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -78,14 +99,14 @@ app.use(function(req, res, next) {
 app.use('/', user);
 app.use('/', index);
 
+// Handling errors
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
-
-// Handling errors
 
 // Error handling for development environment
 if (app.get('env') === 'development') {
@@ -106,6 +127,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;

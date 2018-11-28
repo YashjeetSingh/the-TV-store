@@ -6,15 +6,6 @@ var Order = require('../models/order');
 var elasticsearch = require('elasticsearch');
 var client = require('./connection.js');
 
-/*/var redis = require('redis');
-//var client = redis.createClient(12067, 'redis-12067.c9.us-east-1-4.ec2.cloud.redislabs.com', {no_ready_check: true});
-client.auth('password', function (err) {
-    if (err) throw err;
-});
-
-client.on('connect', function() {console.log('Connected to Redis');
-});*/
-
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
@@ -68,6 +59,55 @@ router.get('/search',function(req,response,next)
             });
         });
 });
+
+/*/var redis = require('redis');
+//var client = redis.createClient(12067, 'redis-12067.c9.us-east-1-4.ec2.cloud.redislabs.com', {no_ready_check: true});
+client.auth('password', function (err) {
+    if (err) throw err;
+});
+
+client.on('connect', function() {console.log('Connected to Redis');
+});*/
+
+//Using Redis cache to cache the results
+/*router.get('/cache',function(req,response,next)
+{
+    var pageNum= 1;
+    var perPage=6;
+    var userQuery = req.query['query'];
+    console.log(userQuery);
+    var searchParams = {
+        index: 'tvshowroom',
+        type: 'tv',
+        body: {
+            query: {
+               multi_match: {
+                    fields: ["seller","Brand"],
+                    query: userQuery,
+                    fuzziness: "AUTO"
+               }
+            }
+        }};
+    client.search(searchParams, function (error, res) {
+        if (error) {
+           // console.log("search error: " + error);
+            throw error;
+        }
+            var results = res.hits.hits.map(function (i) {
+                return i['_source'];
+            });
+            var productChunks = [];
+            var chunkSize = 3;
+            for (var i = 0; i < results.length; i += chunkSize) {
+                productChunks.push(results.slice(i, i + chunkSize));
+                console.log(productChunks);
+                console.log("reached here");
+            }
+            response.render('shop/search', {
+                title: 'Search Results', products: productChunks
+            });
+        });
+});*/
 
 router.get('/contactus', function(req, res, next) {
     res.render('layouts/contactus',{title: 'the-TV-store'});
