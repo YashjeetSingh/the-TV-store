@@ -25,6 +25,18 @@ require('./config/passport');
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
+
+
+/*redisClient.ping({
+requestTimeout: 1000
+}, function (error) {
+if (error) {
+    console.trace('The Redis caching service is not available!');
+} else {
+    console.log('Redis caching service has successfully started!');
+}
+});*/
+
 //Amazon Elasticsearch Service
   //Setting up Amazon Elasticsearch Service
 var elasticsearch = require('elasticsearch');
@@ -54,24 +66,6 @@ client.ping({
         console.log('Amazon Elasticsearch Service successfully connected!');
     }
 });
-
-/*Setting up Redis cache
-var redis = require('redis');
-var redisClient  = require('redis')({
-  host: "redis-18544.c74.us-east-1-4.ec2.cloud.redislabs.com:18544", port: "18544", auth_pass: 'wrFxyijExesYwY2xllff5nh2ivRnKLdv'
-  });
-
-// Terminal output
-// The ping will timeout at 1000ms timeout
-redisClient.ping({
-requestTimeout: 1000
-}, function (error) {
-if (error) {
-    console.trace('The Redis caching service is not available!');
-} else {
-    console.log('Redis caching service has successfully started!');
-}
-});*/
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

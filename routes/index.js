@@ -6,8 +6,23 @@ var Order = require('../models/order');
 var elasticsearch = require('elasticsearch');
 var client = require('./connection.js');
 
+/*Setting up Redis cache*/
+var redis = require('express-redis-cache');
+var redisClient  = redis({
+  host: "redis-18544.c74.us-east-1-4.ec2.cloud.redislabs.com", port: "18544", auth_pass: 'wrFxyijExesYwY2xllff5nh2ivRnKLdv'
+  });
+
+// Terminal output
+// The ping will timeout at 1000ms timeout
+redisClient.on('message', function(message){
+  console.log("Redis caching service has successfully started here!", message);
+});
+
+redisClient.on('error', function(error){
+  console.error("The Redis caching service is not available!", error);
+});
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', redisClient.route(), function (req, res, next) {
 
     var successMsg = req.flash('success')[0];
     Product.find(function (err, docs) {
@@ -21,7 +36,7 @@ router.get('/', function (req, res, next) {
 });
 
 //Using Amazon Elastic Search and display results
-router.get('/search',function(req,response,next)
+router.get('/search', function(req,response,next)
 {
     var pageNum= 1;
     var perPage=6;
@@ -65,12 +80,27 @@ router.get('/search',function(req,response,next)
 client.auth('password', function (err) {
     if (err) throw err;
 });
-
 client.on('connect', function() {console.log('Connected to Redis');
 });*/
 
+/*Setting up Redis cache*/
+var redis = require('express-redis-cache');
+var redisClient  = redis({
+  host: "redis-18544.c74.us-east-1-4.ec2.cloud.redislabs.com", port: "18544", auth_pass: 'wrFxyijExesYwY2xllff5nh2ivRnKLdv'
+  });
+
+// Terminal output
+// The ping will timeout at 1000ms timeout
+redisClient.on('message', function(message){
+  console.log("Redis caching service has successfully started!", message);
+});
+
+redisClient.on('error', function(error){
+  console.error("The Redis caching service is not available!", error);
+});
+
 //Using Redis cache to cache the results
-/*router.get('/cache',function(req,response,next)
+/*router.get('/search',redisClient.route(), function(req,response,next)
 {
     var pageNum= 1;
     var perPage=6;
@@ -104,7 +134,7 @@ client.on('connect', function() {console.log('Connected to Redis');
                 console.log("reached here");
             }
             response.render('shop/search', {
-                title: 'Search Results', products: productChunks
+                title: 'Cached results:', products: productChunks
             });
         });
 });*/
