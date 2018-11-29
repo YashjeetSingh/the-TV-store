@@ -1,78 +1,77 @@
 <html>
 <head>
-    <style>
+  <style>
 
-    body {
-        margin:0;
-        background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
-        opacity:1;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+      body {
+          margin:0;
+          background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
+          opacity:1;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+      html{
+          position: relative;
+          min-width: 1024px;
+          min-height: 768px;
+          height: 100%;
       }
-        html{
-            position: relative;
-            min-width: 1024px;
-            min-height: 768px;
-            height: 100%;
-        }
-        #white-background{
-            display: none;
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            background-color: #fefefe;
-            opacity: 0.7;
-            z-index: 9999;
-        }
+      #white-background{
+          display: none;
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          background-color: #fefefe;
+          opacity: 0.7;
+          z-index: 9999;
+      }
 
-        #dlgbox{
-            {{! The dialog box appers after when try to add something to the cart!}}
-            display: none;
-            position: fixed;
-            width: 480px;
-            z-index: 9999;
-            border-radius: 20px;
-            background-color: transparent;
-        }
+      #dlgbox{
+          {{! The dialog box appers after when try to add something to the cart!}}
+          display: none;
+          position: fixed;
+          width: 480px;
+          z-index: 9999;
+          border-radius: 20px;
+          background-color: transparent;
+      }
 
-        #dlg-header{
-            background-color: #003366;
-            color: white;
-            font-size: 20px;
-            padding: 10px;
-            margin: 10px 10px 0px 10px;
-        }
+      #dlg-header{
+          background-color: #003366;
+          color: white;
+          font-size: 20px;
+          padding: 10px;
+          margin: 10px 10px 0px 10px;
+      }
 
-        #dlg-body{
-            background-color: #6897bb;
-            color: black;
-            font-size: 14px;
-            padding: 10px;
-            margin: 0px 10px 0px 10px;
-        }
+      #dlg-body{
+          background-color: #6897bb;
+          color: black;
+          font-size: 14px;
+          padding: 10px;
+          margin: 0px 10px 0px 10px;
+      }
 
-        #dlg-footer{
-            background-color: #3b5998;
-            text-align: right;
-            padding: 10px;
-            margin: 0px 10px 10px 10px;
-        }
+      #dlg-footer{
+          background-color: #3b5998;
+          text-align: right;
+          padding: 10px;
+          margin: 0px 10px 10px 10px;
+      }
 
+      .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0px;
+          width: 100%;
+          height: 42px;
+          background-color: black;
+          color: whitesmoke;
+          text-align: center;
+      }
 
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0px;
-            width: 100%;
-            height: 42px;
-            background-color: black;
-            color: whitesmoke;
-            text-align: center;
-        }
-
-    </style>
+  </style>
 </head>
 <div class="row">
     <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
@@ -82,10 +81,9 @@
     </div>
 </div>
 <br>
-<br>
-<br>
-
-<h3><b>Here you go!</b></h3>
+<header>
+  <h1 style=align="center"><b>Here you ago!</b></h1>
+</header>
 {{# each products }}
     <div class="row";>
         {{# each this }}
@@ -96,21 +94,21 @@
                         <h3 style="font-size: 20px">{{ this.Title }}</h3>
                     </a>
                     <div class="caption">
-
                         <div class="clearfix">
-                            <div class="price pull-left">Price: ${{ this.Price }}</div>
+                            <div class="price pull-left" style="font-size: 18px"><b>Item Price: ${{ this.Price }}.0</b></div>
+                            <body>
                             <body>
                             <div id="white-background">
                             </div>
                             <div id="dlgbox">
-                                <div id="dlg-header">Item added to cart!</div>
-                                <div id="dlg-body">Uh-oh! We hit a snag!</div>
+                                <div id="dlg-header">Success!!</div>
+                                <div id="dlg-body">Item added to cart!</div>
                                 <div id="dlg-footer">
-                                      <button type="button" class="btn btn-dark" onclick="dlgLogin()"> Back</button>
+                                      <button type="button" class="btn btn-dark" onclick="dlgLogin()"> Ok!</button>
                                 </div>
                             </div>
 
-                            <a class="btn btn-outline-success pull-right" role="button" onclick="showDialog()">Move to cart!  </a>
+                             <a href="/add-to-cart/{{this._id}}" style="font-size: 18px" class="btn btn-success pull-right" role="button" onclick="showDialog()">Move to cart!</a>
                             <script>
                                 function dlgLogin(){
                                     var whitebg = document.getElementById("white-background");
@@ -144,6 +142,6 @@
 {{/each}}
 
 </html>
-<div class="footer" style="padding-top: 10px;">
-  Built by Yashjeet Singh, Poonam Krishna, Shreyas Dalvi!
+<div class="footer" style="font-size:180%;" style="padding-top: 10px;">
+  Built by Yashjeet Singh, Poonam Krishna and Shreyas Dalvi!
   </div>

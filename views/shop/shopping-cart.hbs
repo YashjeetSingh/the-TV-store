@@ -1,3 +1,85 @@
+<html>
+<head>
+<style>
+
+    body {margin:0;
+      background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
+        }
+    html{
+        position: relative;
+        min-width: 1024px;
+        min-height: 768px;
+        height: 100%;
+    }
+    #white-background{
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: #fefefe;
+        opacity: 0.7;
+        z-index: 9999;
+    }
+
+    #dlgbox{
+        /*initially dialog box is hidden*/
+        display: none;
+        position: fixed;
+        width: 480px;
+        z-index: 9999;
+        border-radius: 20px;
+        background-color: transparent;
+    }
+
+    #dlg-header{
+        background-color: #7f7f7f;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px 10px 0px 10px;
+    }
+
+    #dlg-body{
+        background-color: white;
+        color: black;
+        font-size: 14px;
+        padding: 10px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    #dlg-footer{
+        background-color: #f2f2f2;
+        text-align: right;
+        padding: 10px;
+        margin: 0px 10px 10px 10px;
+    }
+
+    #dlg-footer button{
+        background-color: dimgrey;
+        color: white;
+        padding: 5px;
+        border: 0px;
+    }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0px;
+        width: 100%;
+        height: 42px;
+        background-color: black;
+        color: whitesmoke;
+        text-align: center;
+    }
+
+
+</style>
+</head>
+
+<header>
+  <h1 style=align="center"><b>My Cart!</b></h1>
+</header>
 {{# if products }}
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
@@ -8,10 +90,10 @@
                         <strong>{{ this.item.Title }}</strong>
                         <span class="label label-success">${{ this.Price }}</span>
                         <div class="btn-group">
-                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
+                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action </button>
                             <ul class="dropdown-menu">
-                                <li><a href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
-                                <li><a href="/remove/{{this.item._id}}">Remove All</a></li>
+                                <li><a href="/reduce"{{this.item._id}}">Reduce item!</a></li>
+                                <li><a href="/remove"{{this.item._id}}">Remove item!</a></li>
                             </ul>
                         </div>
                     </li>
@@ -21,7 +103,7 @@
     </div>
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <strong>Total: {{ totalPrice }}</strong>
+            <strong>Order Total: $ {{ totalPrice }}</strong>
         </div>
     </div>
     <hr>
@@ -37,3 +119,8 @@
         </div>
     </div>
 {{/if}}
+
+</html>
+<div class="footer" style="font-size:180%;" style="padding-top: 10px;">
+  Built by Yashjeet Singh, Poonam Krishna and Shreyas Dalvi!
+  </div>

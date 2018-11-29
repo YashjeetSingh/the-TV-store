@@ -1,38 +1,46 @@
-
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">the <i class="fas fa-tv"></i> store</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg sticky-top navbar-default navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">the <i class="fas fa-tv"></i> store</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+        </div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/aboutus">Meet the Team!</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/contactus">Reach out!</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav mr-right">
-    <form class="search" method="get" action="/search">
-      <input maxlength="2048" id="searchBox" size="30" type="text"
-      placeholder="Search here!" title="Search" value="" lang="en" name="query" style="height: 35px; " />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Look up!</i></button>
-    </form>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link" href="#">My <i class="fas fa-shopping-cart"></i>!</a>
+  <a class="nav-link" href="/aboutus"><span style="font-size:180%">Meet the Team!</span></a>
     </li>
-    <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Hey <i class="fas fa-user-tie"></i> !
-       </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-         <a class="dropdown-item" href="#"> Sign In/Up!</a>
-         <a class="dropdown-item" href="#">Another action</a>
-         <div class="dropdown-divider"></div>
-         <a class="dropdown-item" href="#">Logout!</a>
-       </div>
-    </ul>
-  </div>
+  </ul>
+
+  <ul class="navbar-nav mr-right">
+<form class="search" method="get" action="/search">
+<input maxlength="2048" id="searchBox" size="30" type="text"
+placeholder="Search here!" title="Search" value="" lang="en" name="query" style="font-size:180%;" />
+<button class="btn btn-outline-success" type="submit"><span style="font-size:180%">Look up!</span></button>
+</form>
+</ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+    <a class="nav-link" href="/shopping-cart/">My <i class="fas fa-shopping-cart"></i>!<span id="lblCartCount" class = "badge">{{session.cart.totalQty}}</span></a>
+  </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hey! <i class="fas fa-user-tie"></i> </a>
+          <ul class="dropdown-menu">
+                {{# if login }}
+                <li><a href="/user/profile"> My Account!</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/">Logout!</a></li>
+                {{ else }}
+                <li><a href="/user/signup"> Sign up! </a></li>
+                <li><a href="user/signin"> Sign in! </a></li>
+                {{/if}}
+              </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>

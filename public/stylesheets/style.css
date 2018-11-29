@@ -1,16 +1,48 @@
-.thumbnail img{
-    max-height: 150px;
-  }
-
-.Title
+header
 {
-  color:gray;
-}
-.Price{
-  font-weight: bold;
-  font-size: 16px;
+    background-color: #666;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
 }
 
-.nav a{
-            font-size: 1.8em;
-        }
+.thumbnail img
+{
+    max-height: 150px;
+}
+
+.nav a
+{
+  font-size: 1.8em;
+}
+
+.navbar-brand
+{
+  font-family: 'Lato', sans-serif;
+  color:grey;
+  font-size: 25px;
+  margin: 0px;
+}
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+}
+</style>

@@ -82,9 +82,10 @@
 </div>
 <br>
 <br>
+<header>
+  <h1 style=align="center"><b>Find our best products here!</b></h1>
+</header>
 <br>
-
-<h3><b>Find our best products here!</b></h3>
 {{# each products }}
     <div class="row";>
         {{# each this }}
@@ -95,22 +96,21 @@
                         <h3 style="font-size: 20px">{{ this.Title }}</h3>
                     </a>
                     <div class="caption">
-
                         <div class="clearfix">
-                            <div class="price pull-left">Price: ${{ this.Price }}</div>
+                            <div class="price pull-left" style="font-size: 18px"><b>Item Price: ${{ this.Price }}.0</b></div>
                             <body>
                             <div id="white-background">
                             </div>
                             <div id="dlgbox">
-                                <div id="dlg-header">Item added to cart!</div>
-                                <div id="dlg-body">Uh-oh! We hit a snag!</div>
+                                <div id="dlg-header" >Success!!</div>
+                                <div id="dlg-body">Item added to cart!</div>
                                 <div id="dlg-footer">
-                                    <button type="button" class="btn btn-dark" onclick="dlgLogin()"> Back</button>
+                                    <button type="button" class="btn btn-dark" > OK! </button>
                                 </div>
                             </div>
 
-                            <a class="btn btn-outline-success pull-right" role="button" onclick="showDialog()">Move to cart!  </a>
-                            <script>
+                            <a href="/add-to-cart/{{this._id}}" style="font-size: 18px" class="btn btn-outline-success pull-right" role="button" onclick="showDialog()">Move to cart!</a>
+                           <script>
                                 function dlgLogin(){
                                     var whitebg = document.getElementById("white-background");
                                     var dlg = document.getElementById("dlgbox");
@@ -143,6 +143,6 @@
 {{/each}}
 
 </html>
-<div class="footer" style="padding-top: 10px;">
-  Built by Yashjeet Singh, Poonam Krishna, Shreyas Dalvi!
+<div class="footer" style="font-size:180%;" style="padding-top: 10px;">
+  Built by Yashjeet Singh, Poonam Krishna and Shreyas Dalvi!
   </div>

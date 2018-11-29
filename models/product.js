@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var schema = new Schema({
-  _id: { type: Number,required: true},
+//  _id: { type: Number,required: true},
   Title:{type: String,required: true},
   Brand:{type: String,required: true},
   seller:{type: String,required: true},
@@ -12,7 +12,7 @@ var schema = new Schema({
   Dimension:{type:String,required: true},
   Modelnumber:{type: String,required: true},
   ASIN:{type:String,required: true},
-  Price: {type:String,required: true},
+  Price: {type:Number,required: true},
   SoldBy: {type:String,required: true},
   ImageURL: {type:String,required: true}
 });
