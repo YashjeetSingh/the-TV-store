@@ -1,7 +1,85 @@
+<head>
+    <style>
+
+        body {
+            margin:0;
+            background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
+            opacity:1;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          }
+        html{
+            position: relative;
+            min-width: 1024px;
+            min-height: 768px;
+            height: 100%;
+        }
+        #white-background{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: #fefefe;
+            opacity: 0.7;
+            z-index: 9999;
+        }
+
+        #dlgbox{
+            {{! The dialog box appers after when try to add something to the cart!}}
+            display: none;
+            position: fixed;
+            width: 480px;
+            z-index: 9999;
+            border-radius: 20px;
+            background-color: transparent;
+        }
+
+        #dlg-header{
+            background-color: #003366;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px 10px 0px 10px;
+        }
+
+        #dlg-body{
+            background-color: #6897bb;
+            color: black;
+            font-size: 14px;
+            padding: 10px;
+            margin: 0px 10px 0px 10px;
+        }
+
+        #dlg-footer{
+            background-color: #3b5998;
+            text-align: right;
+            padding: 10px;
+            margin: 0px 10px 10px 10px;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0px;
+            width: 100%;
+            height: 42px;
+            background-color: black;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h1>User Profile</h1>
-        <hr>
+      <br>
+      <header>
+        <h1 style=align="center"><b>My Profile!</b></h1>
+      </header>
+      <br>        <hr>
         <h2>My Orders</h2>
         {{# each orders }}
             <div class="panel panel-default">
@@ -23,6 +101,7 @@
     </div>
 </div>
 
-<div class="footer" style="padding-top: 10px;">
-  Built by Yashjeet Singh, Poonam Krishna, Shreyas Dalvi!
-</div>
+</html>
+<div class="footer" style="font-size:180%;" style="padding-top: 10px;">
+  Built by Yashjeet Singh, Poonam Krishna and Shreyas Dalvi!
+  </div>
