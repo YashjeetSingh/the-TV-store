@@ -1,73 +1,150 @@
-<!DOCTYPE html>
 <html>
+<head>
 
-	<head>
+  <style>
+        body {
+            margin:0;
+            background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
+            opacity:1;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          }
+        html{
+            position: relative;
+            min-width: 1024px;
+            min-height: 768px;
+            height: 100%;
+        }
+        #white-background{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: #fefefe;
+            opacity: 0.7;
+            z-index: 9999;
+        }
 
-		<title>18!</title>
+        #dlgbox{
+            {{! The dialog box appers after when try to add something to the cart!}}
+            display: none;
+            position: fixed;
+            width: 480px;
+            z-index: 9999;
+            border-radius: 20px;
+            background-color: transparent;
+        }
 
-			<link rel='stylesheet' href='/stylesheets/aboutus.css'/>
+        #dlg-header{
+            background-color: #003366;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px 10px 0px 10px;
+        }
 
+        #dlg-body{
+            background-color: #6897bb;
+            color: black;
+            font-size: 14px;
+            padding: 10px;
+            margin: 0px 10px 0px 10px;
+        }
 
-	</head>
+        #dlg-footer{
+            background-color: #3b5998;
+            text-align: right;
+            padding: 10px;
+            margin: 0px 10px 10px 10px;
+        }
 
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0px;
+            width: 100%;
+            height: 42px;
+            background-color: black;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
 <body>
+	<div class="bg">
+	  <br><br>
+		<header>
+			<div class="caption">
+	  <h1>Our Group!</h1>
+	  </div>
+		</header>
+		<br><br>
+	  <div class="about">
+	  <center><h3>Hi! Welcome to our website! Discover our team below!</h3><center>
+	  </div>
+<br><br>
+	  <div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="card">
+	      <img src="images\PK.jfif" alt="Poonam Krishna" style="width:100%">
+				<div class="container">
+				 <br>
+				 <h2><u>Poonam Krishna</u></h2>
+				 <br>
+				 <h4><b><p class="title">Team Member</p></b>
+				 <p>MS BAIS, Muma College of Business USF.</p></h4>
+				 <p><a href="mailto:poonamk@mail.usf.edu"style='color: navy';><i class="fa fa-envelope" style="font-size:24px;color:blue"></i></a>&nbsp;&nbsp;
+			<a href="https://www.linkedin.com/in/poonam-krishna-b1335ba0/"style='color: navy';> <i class="fa fa-linkedin-square" style="font-size:24px;"></i></a>
+		<a href="https://github.com/poonam-USF/"style='color: navy';> <i class="fa fa-github" style="font-size:24px;"></i></a></p>
+		 </div>
+	    </div>
+	  </div>
 
-<div class="bg">
-  <div class="caption">
-  <h1>The 18!</h1>
-  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="card">
+	      <img src="images\SD.jfif" alt="Shreyas Dalvi" style="width:100%">
+				<div class="container">
+				 <br>
+				 <h2><u>Shreyas Dalvi</u></h2>
+				 <br>
+				 <h4><b><p class="title">Team Member</p></b>
+				 <p>MS BAIS, Muma College of Business USF.</p></h4>
+				 <p><a href="mailto:shreyasdalvi@mail.usf.edu"style='color: navy';><i class="fa fa-envelope" style="font-size:24px;color:blue"></i></a>&nbsp;&nbsp;
+			<a href="https://www.linkedin.com/in/shreyasdalvi//"style='color: navy';> <i class="fa fa-linkedin-square" style="font-size:24px;"></i></a>
+		<a href="https://github.com/shreyasdalvi"style='color: navy';> <i class="fa fa-github" style="font-size:24px;"></i></a></p>
+		 </div>
+	    </div>
+	  </div>
 
-  <div class="about">
-  <h4>Hi! Welcome to Group 18! Please choose from below to know more about our team!</h4>
-  </div>
-
-  <div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="IMG\PK.jfif" alt="Poonam Krishna" style="width:100%">
-      <div class="container">
-        <h2><u>Poonam Krishna</u></h2>
-        <p class="title">Team Member</p>
-        <p>MS BAIS Muma College of Business USF.</p>
-        <p><a href="mailto:poonamk@mail.usf.edu"style='color: navy';>poonamk@mail.usf.edu</a></p>
-        <h3<button class="button"><a href="/PK.html">Know more!</a></button></h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="IMG\SD.jfif" alt="Shreyas Dalvi" style="width:100%">
-      <div class="container">
-        <h2><u>Shreyas Dalvi</u></h2>
-        <p class="title">Team Member</p>
-        <p>MS BAIS Muma College of Business USF.</p>
-        <p><a href="mailto:shreyasdalvi@mail.usf.edu"style='color: navy';>shreyasdalvi@mail.usf.edu</a></p>
-        <h3<button class="button"><a href='./views/layouts/SD.html'>Know more!</a></button></h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="IMG\YS.jfif" alt="Yashjeet Singh" style="width:100%">
-      <div class="container">
-        <h2><u>Yashjeet Singh</u></h2>
-        <p class="title">Team Member</p>
-        <p>MS BAIS Muma College of Business USF.</p>
-        <p><a href="mailto:yashjeet@mail.usf.edu"style='color: navy';>yashjeet@mail.usf.edu</a></p>
-        <p><button class="button"><a href="YS.html">Know more!</a></button></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-  </div>
-
- <footer><p style='color: navy'>
-Designed by:<b> Poonam Krishna, Shreyas Dalvi and Yashjeet Singh for "Assignment 3 -Look and Feel" under ISM6225.901F18 Distributed Information Systems.</br>
-© 2018 Team 18</h3></br><a style='color: azure'href="steps.html">Click here to know about the steps taken to create the website!</a></p>
-</p></footer>
-
+	  <div class="col-sm-6 col-md-4">
+	    <div class="card">
+	      <img src="images\YS.jfif" alt="Yashjeet Singh" style="width:100%">
+	      <div class="container">
+	        <br>
+					<h2><u>Yashjeet Singh</u></h2>
+					<br>
+	        <h4><b><p class="title">Team Member</p></b>
+	        <p>MS BAIS, Muma College of Business USF.</p></h4>
+	        <p><a href="mailto:yashjeet@mail.usf.edu"style='color: navy';><i class="fa fa-envelope" style="font-size:24px;color:blue"></i></a>&nbsp;&nbsp;
+	     <a href="https://www.linkedin.com/in/yashjeetsingh/"style='color: navy';> <i class="fa fa-linkedin-square" style="font-size:24px;"></i></a>
+		 <a href="https://github.com/YashjeetSingh/"style='color: navy';> <i class="fa fa-github" style="font-size:24px;"></i></a></p>
+			</div>
+	    </div>
+	  </div>
+	</div>
+<br><br>
+	<header>
+		<div class="caption">
+	<h1>Architecture</h1>
+	</div>
+	</header>
+	  </div>
 </body>
-</html>
+<br><br><br><br><br><br>
+<div class="footer" style="font-size:180%;" style="padding-top: 10px;">
+  Built by Yashjeet Singh, Poonam Krishna and Shreyas Dalvi!
+  </div>
