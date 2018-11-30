@@ -77,30 +77,35 @@
     <div class="col-md-8 col-md-offset-2">
       <br>
       <header>
-        <h1 style=align="center"><b>My Profile!</b></h1>
+        <h1 style=align="center"><b>My Orders!</b></h1>
       </header>
       <br>        <hr>
-        <h2>My Orders</h2>
-        {{# each orders }}
+      {{# each orders }}
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul class="list-group">
                         {{# each this.items }}
                             <li class="list-group-item">
-                                <span class="badge">{{ this.Price }}</span>
-                                {{ this.item.Title }} | {{ this.qty }} Units
+                              <div class="product-price"><h2>${{ this.Price }}.00<h2></div>
+                                <div class="product-details">
+                                    <div class="product-title"><h4>{{ this.item.Title }}</h4>
+                                  </div>
+                                </div>  <div class="product-details">
+                                    <div class="product-title"><h2>{{ this.qty }} Units</h2>
+                                  </div>
+                                </div>
                             </li>
                         {{/each}}
                     </ul>
                 </div>
                 <div class="panel-footer">
-                    <strong>Total Price: ${{ this.cart.totalPrice }}</strong>
+                    <strong><b><h2>Total Paid: ${{ this.cart.totalPrice }}</h2></b></strong>
                 </div>
             </div>
         {{/each}}
     </div>
 </div>
-
+<br><br><br><br><br><br>
 </html>
 <div class="footer" style="font-size:180%;" style="padding-top: 10px;">
   Built by Yashjeet Singh, Poonam Krishna and Shreyas Dalvi!
