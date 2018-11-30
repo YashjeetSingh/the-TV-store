@@ -1,124 +1,134 @@
+<!------ Include the above in your HEAD tag ---------->
+
 <html>
 <head>
-<style>
+    <style>
 
-    body {margin:0;
-      background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
+        body {
+            margin:0;
+            background-image: url("https://cdn.hipwallpaper.com/i/1/9/KLmBD4.jpg");
+            opacity:1;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          }
+        html{
+            position: relative;
+            min-width: 1024px;
+            min-height: 768px;
+            height: 100%;
         }
-    html{
-        position: relative;
-        min-width: 1024px;
-        min-height: 768px;
-        height: 100%;
-    }
-    #white-background{
-        display: none;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        background-color: #fefefe;
-        opacity: 0.7;
-        z-index: 9999;
-    }
+        #white-background{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: #fefefe;
+            opacity: 0.7;
+            z-index: 9999;
+        }
 
-    #dlgbox{
-        /*initially dialog box is hidden*/
-        display: none;
-        position: fixed;
-        width: 480px;
-        z-index: 9999;
-        border-radius: 20px;
-        background-color: transparent;
-    }
+        #dlgbox{
+            {{! The dialog box appers after when try to add something to the cart!}}
+            display: none;
+            position: fixed;
+            width: 480px;
+            z-index: 9999;
+            border-radius: 20px;
+            background-color: transparent;
+        }
 
-    #dlg-header{
-        background-color: #7f7f7f;
-        color: white;
-        font-size: 20px;
-        padding: 10px;
-        margin: 10px 10px 0px 10px;
-    }
+        #dlg-header{
+            background-color: #003366;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px 10px 0px 10px;
+        }
 
-    #dlg-body{
-        background-color: white;
-        color: black;
-        font-size: 14px;
-        padding: 10px;
-        margin: 0px 10px 0px 10px;
-    }
+        #dlg-body{
+            background-color: #6897bb;
+            color: black;
+            font-size: 14px;
+            padding: 10px;
+            margin: 0px 10px 0px 10px;
+        }
 
-    #dlg-footer{
-        background-color: #f2f2f2;
-        text-align: right;
-        padding: 10px;
-        margin: 0px 10px 10px 10px;
-    }
+        #dlg-footer{
+            background-color: #3b5998;
+            text-align: right;
+            padding: 10px;
+            margin: 0px 10px 10px 10px;
+        }
 
-    #dlg-footer button{
-        background-color: dimgrey;
-        color: white;
-        padding: 5px;
-        border: 0px;
-    }
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0px;
-        width: 100%;
-        height: 42px;
-        background-color: black;
-        color: whitesmoke;
-        text-align: center;
-    }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0px;
+            width: 100%;
+            height: 42px;
+            background-color: black;
+            color: whitesmoke;
+            text-align: center;
+        }
 
-</style>
-</head>
+    </style>
 
-<header>
+    <header>
   <h1 style=align="center"><b>My Cart!</b></h1>
+<h1 style=align="justify"><b>Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Quantity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;Price</b></h1>
 </header>
+<br><br><br><br>
+<div class="shopping-cart">
+
+
 {{# if products }}
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <ul class="list-group">
                 {{# each products }}
-                <li class="list-group-item">
-                  <b><h2>Item Name:</h2></b>
-                    <br>
-                    <h2><span class="btn pull-left btn-info">{{ this.item.Title }}</h2>
-                      <br><br><br>
-                      <h2><span class="label pull-left label-success">Quantity: {{ this.qty }}</span>
-                      <h2><span class="label pull-right label-success">Item Price: ${{ this.Price }}.0</span>
-                 </li>
-                {{/each}}
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <h3><strong>Order Total: $ {{ totalPrice }}</strong></h3>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <a href="/checkout" type="button" class="btn btn-success"><h3>Checkout</h3></a>
-        </div>
-    </div>
-{{ else }}
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-          <br>
-          <br>
-            <p><h2>Uh-oh! No items in found in the cart!<br>
-            Please add some items to view the cart!</h2></p>
-        </div>
-    </div>
-{{/if}}
+                <div class="product">
+                  <div class="product-details">
 
-</html>
-<div class="footer" style="font-size:180%;" style="padding-top: 10px;">
-  Built by Yashjeet Singh, Poonam Krishna and Shreyas Dalvi!
-  </div>
+                      <div class="product-title"><h2>{{ this.item.Title }}</h2>
+                    </div>
+
+                  </div>
+                <div class="product-price"><h2>${{ this.Price }}.00<h2></div>
+                  <div class="product-quantity"><h2>{{ this.qty }}<h2></div>
+                  </div>
+                {{/each}}
+        </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <div class="product-line-price"><b><h2>Total:${{ totalPrice }}.00</b></h2></div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <a class="checkout" type="button" href="/checkout"><h3>Checkout</h3></a>
+        </div>
+<br><br><br>
+    </div>
+    {{ else }}
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+              <br>
+              <br>
+                <p><h2>Uh-oh! No items in found in the cart!<br>
+                Please add some items to view the cart!</h2></p>
+            </div>
+        </div>
+    {{/if}}
+    <br>
+    <br>
+    <br>
+    <br>
+    </html>
+    <div class="footer" style="font-size:180%;" style="padding-top: 10px;">
+      Built by Yashjeet Singh, Poonam Krishna and Shreyas Dalvi!
+      </div>
