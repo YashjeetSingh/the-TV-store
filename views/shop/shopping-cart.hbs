@@ -73,7 +73,6 @@
         text-align: center;
     }
 
-
 </style>
 </head>
 
@@ -85,37 +84,36 @@
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
             <ul class="list-group">
                 {{# each products }}
-                    <li class="list-group-item">
-                        <span class="badge">{{ this.qty }}</span>
-                        <strong>{{ this.item.Title }}</strong>
-                        <span class="label label-success">${{ this.Price }}</span>
-                        <div class="btn-group">
-                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="/reduce"{{this.item._id}}">Reduce item!</a></li>
-                                <li><a href="/remove"{{this.item._id}}">Remove item!</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                <li class="list-group-item">
+                  <b><h2>Item Name:</h2></b>
+                    <br>
+                    <h2><span class="btn pull-left btn-info">{{ this.item.Title }}</h2>
+                      <br><br><br>
+                      <h2><span class="label pull-left label-success">Quantity: {{ this.qty }}</span>
+                      <h2><span class="label pull-right label-success">Item Price: ${{ this.Price }}.0</span>
+                 </li>
                 {{/each}}
             </ul>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <strong>Order Total: $ {{ totalPrice }}</strong>
+            <h3><strong>Order Total: $ {{ totalPrice }}</strong></h3>
         </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
+            <a href="/checkout" type="button" class="btn btn-success"><h3>Checkout</h3></a>
         </div>
     </div>
 {{ else }}
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <h2>No Items in Cart</h2>
+          <br>
+          <br>
+            <p><h2>Uh-oh! No items in found in the cart!<br>
+            Please add some items to view the cart!</h2></p>
         </div>
     </div>
 {{/if}}

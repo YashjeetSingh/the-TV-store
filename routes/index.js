@@ -37,7 +37,7 @@ router.get('/', function (req, res, next) {
 });
 
 //Using Amazon Elastic Search and display results
-router.get('/search', redisClient.route(), function(req,response,next)
+router.get('/search', function(req,response,next)
 {
     var pageNum= 1;
     var perPage=6;
@@ -79,7 +79,6 @@ router.get('/search', redisClient.route(), function(req,response,next)
 router.get('/aboutus', function(req, res, next) {
     res.render('layouts/aboutus',{title: 'the-TV-store'});
     });
-
 
 router.get('/loadProduct', function (req, res) {
     console.log("Calling MongoDB to load product Details!");
